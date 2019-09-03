@@ -1,5 +1,6 @@
 "use strict";
-//variant of bubbleSort, go up then down.
+//variant of bubbleSort, move pointer up, then back down 
+//in order to enable low-downers near the end to go to the end.
 module.exports = (arr) => {
    //assume that if no swaps then the array is sorted
    let swapped = true
