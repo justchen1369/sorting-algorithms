@@ -1,15 +1,16 @@
 "use strict";
 //variant of bubbleSort, go up then down.
 module.exports = (arr) => {
-   let sorted;
+   //assume that if no swaps then the array is sorted
+   let swapped = true
    do {
-      let sorted = true
+      swapped = false
       for(let i=0; i < (arr.length); i++){
          if (arr[i] > arr[i+1]) {
             let temp = arr[i+1];
             arr[i+1] = arr[i];
             arr[i] = temp;
-            sorted = false
+            swapped = true
          }
       }
       for(let i = arr.length; i > 0; i--){
@@ -17,9 +18,9 @@ module.exports = (arr) => {
             let temp = arr[i-1];
             arr[i-1] = arr[i];
             arr[i] = temp;
-            sorted = false
+            swapped = true
          }
       }
-   } while (sorted)
+   } while (swapped)
    return arr
 }
