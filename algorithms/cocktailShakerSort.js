@@ -2,8 +2,8 @@
 //variant of bubbleSort, go up then down.
 module.exports = (arr) => {
    let sortedAndReady = false
-   while(!sortedAndReady){ //not sure what variable to use
-      let sorted = true     //and while true seems a bit like it could go wrong
+   while(true){
+      let sorted = true
       for(let i=0; i < (arr.length); i++){
          if (arr[i] > arr[i+1]) {
             let temp = arr[i+1];
@@ -20,9 +20,8 @@ module.exports = (arr) => {
             }
          }
          if(sorted){
-           sortedAndReady = true
+           return arr
          }
       }
    }
-   return arr
 }
