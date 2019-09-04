@@ -1,24 +1,19 @@
-
-"use strict";
 module.exports = (arr) => {
-    let sortedCounter = 0
-    let sorted = false
-    while (!sorted) {
-        console.log(arr)
-        let min = arr[0] //placeholder init value
-        for(let i = sortedCounter; i++; i < arr.length - sortedCounter) {
-            //abusing 0-indexing to make unreadable code
-            /*
-            this is to start counting at the next unsorted element
-            */
-            if(arr[i] < min) {
-                min = arr[i]
-            }
-        }
-        let temp = arr[sortedCounter] //abusing 0-indexing to get element to be sorted
-        arr[sortedCounter] = min
-        sortedCounter++
-        if(sortedCounter === arr.length) sorted = true
-        console.log(arr)
+  for (let i = 0; i < arr.length; i++) { //main outer loop
+    let smallest = i //later swapped if any smaller elements
+    for (let j = i+1; j < arr.length; j++) { //start from 1, not 0 for comparison
+      if (arr[j] < arr[smallest]) {
+        smallest = j;
+      }
+      if (j_min !== i) {
+        let temp = arr[i];
+        arr[i] = arr[j_min];
+        arr[j_min] = temp;
+      }
     }
+  }
+  return arr
 }
+/*
+this function has a outer loop that loops through each element in the array, then loops through each element in the array after the array indexed by the outer loop. for each element in the inner loop, it calculates the minimum and later swaps it with the indexed outer loop element.
+*/
