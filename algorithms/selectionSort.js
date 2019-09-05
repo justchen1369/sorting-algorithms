@@ -1,14 +1,14 @@
 module.exports = (arr) => {
   for (let i = 0; i < arr.length; i++) { //main outer loop
-    let smallest = i //later swapped if any smaller elements
+    let indexSmallest = i //later swapped if any smaller elements
     for (let j = i+1; j < arr.length; j++) { //start from 1, not 0 for comparison
-      if (arr[j] < arr[smallest]) {
-        smallest = j;
+      if (arr[j] < arr[indexSmallest]) {
+        indexSmallest = j;
       }
-      if (j_min !== i) {
+      if (indexSmallest !== i) {
         let temp = arr[i];
-        arr[i] = arr[j_min];
-        arr[j_min] = temp;
+        arr[i] = arr[indexSmallest];
+        arr[indexSmallest] = temp;
       }
     }
   }
