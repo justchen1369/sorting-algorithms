@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-  "use strict";
-=======
 "use strict";
->>>>>>> 61841e303a8b8095fe1ce81b8d9df521ba457ea2
 module.exports = (arr) => {
    let swapped = true
    do {
